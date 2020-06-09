@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "outDir": "build/dist",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": [
+      "es6",
+      "esnext", 
+      "dom"
+    ],
+    "allowJs": true,
+    "strict": true,
+    // "noImplicitAny": true,
+    // "noImplicitThis": true,
+    // "noImplicitReturns": true,
+    // "strictNullChecks": true,
+    
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": false,
+    
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      // "@/*": ["./src/*"],
+      "src/*": ["./src/*"],
+      "main/*": ["./main/*"],
+      "common/*": ["./common/*"],
+    }
+  },
+  "exclude": [
+    "node_modules", 
+    "build",
+    "dist",
+    "scripts",
+    // "src/.umi/*",
+    "webpack",
+    "jest",
+    // "main",
+    // "common",
+  ]
+}
+
