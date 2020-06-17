@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HashRouter , } from 'react-router-dom';
+// import { HashRouter , } from 'react-router-dom';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 import {
@@ -15,8 +15,6 @@ import {
   Menu as MenuIcon,
 } from '@material-ui/icons';
 // import CanvasBase from './canvas/canvas.base';
-
-
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -47,7 +45,7 @@ function App() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            LemonC's practicies
+            LemonC&apos;s practicies
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

@@ -1,2 +1,0 @@
-# practices
-practise &amp; examples

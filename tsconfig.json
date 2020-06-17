@@ -35,16 +35,17 @@
       "common/*": ["./common/*"],
     }
   },
-  "exclude": [
-    "node_modules", 
-    "build",
-    "dist",
-    "scripts",
-    // "src/.umi/*",
-    "webpack",
-    "jest",
-    // "main",
-    // "common",
-  ]
+  "include": ["src"],
+  // "exclude": [
+  //   "node_modules", 
+  //   "build",
+  //   "dist",
+  //   "scripts",
+  //   // "src/.umi/*",
+  //   "webpack",
+  //   "jest",
+  //   // "main",
+  //   // "common",
+  // ]
 }
 
