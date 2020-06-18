@@ -4,17 +4,11 @@ import {
   PhotoLibrary,
   Event,
   EventAvailable,
+  DataUsage,
 } from '@material-ui/icons';
-// import {} from ''
 import CanvasBase from 'src/pages/canvas/canvas.base';
 import CusteomEvent from 'src/pages/events/customEvent'
-
-// enum Routes{
-//   canvas = 'canvas',
-//   react = 'react',
-//   event = 'event',
-
-// }
+import RecoilExample from 'src/pages/recoiljs/recoilExample';
 
 export interface RouteConfigProps {
   key: string,
@@ -24,7 +18,6 @@ export interface RouteConfigProps {
   component?: React.FC| React.ComponentClass, // @gya-todos: 这里应该如何定义一个组件的类型？
   routes?: Array<RouteConfigProps>,
 }
-
 
 /**
  * 嵌套路径：父节点的path作为是否展开节点的标识
@@ -42,7 +35,7 @@ export const routesConfig: RouteConfigProps[] = [
     key: 'canvas',
     name: '图层',
     icon: CameraEnhance,
-    path: '/canvas', // 
+    path: '/canvas',
     routes: [
       {
         key: 'canvas-base',
@@ -67,7 +60,22 @@ export const routesConfig: RouteConfigProps[] = [
         component: CusteomEvent,
       }
     ]
-  }
+  },
+  {
+    key: 'recoil',
+    name: '状态管理',
+    icon: DataUsage,
+    path: '/recoil',
+    routes: [
+      {
+        key: 'recoil-example',
+        name: '例子🌰',
+        path: '/recoil/example',
+        icon: DataUsage,
+        component: RecoilExample,
+      }
+    ]
+  },
 ]
 
 // export routes;

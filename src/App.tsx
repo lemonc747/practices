@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import {
   Container,
@@ -71,64 +72,66 @@ function App() {//(props: WithWidth) {
   };
 
   return (
-    <div className={classes.root}>
-      <Router>
-        <AppTopBar />
-        <Hidden smDown>
-          <Drawer
-            className={classes.menuContainer}
-            variant='permanent'
-            open={menuState}
-          >
-            <MenuBar />
-          </Drawer>
-        </Hidden>
-        <Hidden mdUp implementation="css">
-          <Drawer
-            className={classes.menuContainer}
-            variant='temporary'
-            open={mobileMenuState}
-            onClose={handleMobileMenuToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            <MenuBar />
-          </Drawer>
-        </Hidden>
-        <div className={classes.mainContainer}>
-          <Switch>
-            {slimRoutes.map(route => {
-              const { key, path, component: RouteComponent } = route;
-              console.log('path', path)
-              return !RouteComponent ? null :(
-                <Route key={key} exact path={path}>
-                  <RouteComponent />
-                </Route>
-              )
-            })}
-          </Switch>
-          
-          {/* {[1,2,3,4,5,6].map(() => (
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-              ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-              facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-              donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-              imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-              arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-              donec massa sapien faucibus et molestie ac.
-            </Typography>
-          ))} */}
+    <RecoilRoot>
+      <div className={classes.root}>
+        <Router>
+          <AppTopBar />
+          <Hidden smDown>
+            <Drawer
+              className={classes.menuContainer}
+              variant='permanent'
+              open={menuState}
+            >
+              <MenuBar />
+            </Drawer>
+          </Hidden>
+          <Hidden mdUp implementation="css">
+            <Drawer
+              className={classes.menuContainer}
+              variant='temporary'
+              open={mobileMenuState}
+              onClose={handleMobileMenuToggle}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+            >
+              <MenuBar />
+            </Drawer>
+          </Hidden>
+          <div className={classes.mainContainer}>
+            <Switch>
+              {slimRoutes.map(route => {
+                const { key, path, component: RouteComponent } = route;
+                console.log('path', path)
+                return !RouteComponent ? null :(
+                  <Route key={key} exact path={path}>
+                    <RouteComponent />
+                  </Route>
+                )
+              })}
+            </Switch>
+            
+            {/* {[1,2,3,4,5,6].map(() => (
+              <Typography paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
+                facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
+                gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
+                donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
+                adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
+                Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
+                imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
+                arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
+                donec massa sapien faucibus et molestie ac.
+              </Typography>
+            ))} */}
 
-        </div>
-      </Router>
-      
-      {/* <Container /> */}
-    </div>
+          </div>
+        </Router>
+        
+        {/* <Container /> */}
+      </div>
+    </RecoilRoot>
   );
 }
 

@@ -70,6 +70,15 @@ module.exports = {
     //   "args": "after-used",
     //   "ignoreRestSiblings": false
     // }],
+
+    "react-hooks/rules-of-hooks": "error",
+    // support Recoil
+    "react-hooks/exhaustive-deps": [
+      "warn", {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ],
+
     '@typescript-eslint/no-array-constructor': 'warn',
 
     // disable the rule for all files
