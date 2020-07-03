@@ -1,11 +1,9 @@
 
-
-
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
+    project: ['../tsconfig.json'],
   },
   // parser: 'babel-eslint',
   // extends: ['airbnb', 'prettier', 'plugin:compat/recommended'],
@@ -13,7 +11,6 @@ module.exports = {
     // "airbnb-typescript",
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    // @gya-todos:为什么一加入下面两项，eslint检查就无法响应了，好像卡死了一样
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     'plugin:@typescript-eslint/recommended-requiring-type-checking',

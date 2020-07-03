@@ -5,7 +5,6 @@ const textState = atom({
   default: '', // default value (aka initial value)
 });
 
-
 export {
   textState,
 }

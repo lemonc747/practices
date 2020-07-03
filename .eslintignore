@@ -3,7 +3,8 @@ node_modules
 build
 dist
 
-config
-scripts
+# config
+# scripts
 
 src/serviceWorker.ts
+src/.eslintrc.js
